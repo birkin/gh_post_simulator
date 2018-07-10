@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-""" Simulates a post from github, for testing.
+""" Simulates a hit from github, for testing.
+    (Turns out it's a GET, not a POST.)
     Assumes python3 env is activated. """
 
 import json, logging, logging.config, os, pathlib, pprint, sys
@@ -16,8 +17,7 @@ logging.basicConfig(
     filename=os.environ['GH_SIM__LOG_PATH'],
     level=logging.DEBUG,
     format='[%(asctime)s] %(levelname)s [%(module)s-%(funcName)s()::%(lineno)d] %(message)s',
-    datefmt='%d/%b/%Y %H:%M:%S',
-    )
+    datefmt='%d/%b/%Y %H:%M:%S' )
 logging.propagte = False
 log = logging.getLogger(__name__)
 log.debug( 'logging ready' )
