@@ -23,12 +23,14 @@ log = logging.getLogger(__name__)
 log.debug( 'logging ready' )
 
 
-URL = os.environ[ 'GH_SIM__BASICAUTH_LISTENER_URL' ]
-PAYLOAD = os.environ[ 'GH_SIM__PAYLOAD' ]
+URL = os.environ[ 'GH_SIM__BASICAUTH_LISTENER_URL' ]  # example url: `http://username:password@127.0.0.1:8000/gh_listener/`
+JSON_PAYLOAD = json.loads( os.environ['GH_SIM__JSON_PAYLOAD'] )  # can be as simple as '"foo"', or complex json
 
 
-
-
-r = requests.get( URL )
-print( r.content )
-
+try:
+    r = requests.get( URL, data=JSON_PAYLOAD )
+    print( r.content )
+except Exception as e:
+    message = 'exception, ```%s```' % e
+    log.error( message )
+    print( message )
