@@ -14,7 +14,7 @@ import requests
 
 
 logging.basicConfig(
-    filename=os.environ['GH_SIM__LOG_PATH'],
+    # filename=os.environ['GH_SIM__LOG_PATH'],
     level=logging.DEBUG,
     format='[%(asctime)s] %(levelname)s [%(module)s-%(funcName)s()::%(lineno)d] %(message)s',
     datefmt='%d/%b/%Y %H:%M:%S' )
