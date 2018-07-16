@@ -24,7 +24,7 @@ log.debug( 'logging ready' )
 
 
 URL = os.environ[ 'GH_SIM__BASICAUTH_LISTENER_URL' ]  # example url: `http://username:password@127.0.0.1:8000/gh_listener/`
-JSON_PAYLOAD = json.loads( os.environ['GH_SIM__JSON_PAYLOAD'] )  # can be as simple as '"foo"', or complex json
+JSON_PAYLOAD = os.environ['GH_SIM__JSON_PAYLOAD']  # can be as simple as '"foo"', or complex json
 
 
 try:
