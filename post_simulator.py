@@ -28,7 +28,7 @@ JSON_PAYLOAD = os.environ['GH_SIM__JSON_PAYLOAD']  # can be as simple as '"foo"'
 
 
 try:
-    r = requests.get( URL, data=JSON_PAYLOAD )
+    r = requests.get( URL, data=JSON_PAYLOAD, timeout=30 )
     print( r.content )
 except Exception as e:
     message = 'exception, ```%s```' % e
